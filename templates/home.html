@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Recommendation System</title>
+  <style>
+
+    body {
+        margin: 0px;
+    }
+
+    .input-form-container {
+    background-image: url("https://img.freepik.com/premium-photo/indian-agriculture-wheat-field-india_75648-1097.jpg?size=626&ext=jpg&ga=GA1.1.275736999.1667834807&semt=ais");
+    background-size: cover;
+    height: 100vh;
+    filter: brightness(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 50px 25px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+.form-heading {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 42px;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.form-description {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 20px;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.label-styles {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Roboto";
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.input-styles {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    font-family: "Roboto";
+    background-color: #4CAF50;
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+
+</style>
+</head>
+<body>
+  <header>
+  </header>
+  
+  <main>
+    <!-- <form id="cropForm" method="post" action="{{url_for('predict')}}">
+      <label for="nitrogen">Nitrogen Percentage:</label>
+      <input type="number" id="nitrogen" name="N" required><br>
+      
+      <label for="potassium">Potassium Percentage:</label>
+      <input type="number" id="potassium" name="K" required><br>
+      
+      <label for="phosphorous">Phosphorous Content:</label>
+      <input type="number" id="phosphorous" name="P" required><br>
+      
+      <label for="temperature">Temperature:</label>
+      <input type="number" id="temperature" name="temperature" required><br>
+      
+      <label for="humidity">Humidity:</label>
+      <input type="number" id="humidity" name="humidity" required><br>
+      
+      <label for="pH">pH:</label>
+      <input type="number" id="pH" name="pH" required><br>
+      
+      <label for="rainfall">Rainfall:</label>
+      <input type="number" id="rainfall" name="rainfall" required><br>
+      
+      <input type="submit" value="Submit">
+    </form> -->
+
+    <div id="crop-rec-page">
+      <div class="input-form-container">
+          <h1 class="form-heading">Grow Smarter: Crop Recommendation System</h1>
+          <p class="form-description">Get the perfect crop for your land and maximize yield.</p>
+          <form id="cropForm" method="post" action="{{url_for('predict')}}">
+              <label class="label-styles" for="nitrogen">Nitrogen (kg/ha):</label>
+              <input class="input-styles" type="number" id="nitrogen" name="N" required>
+              <br>
+              <label class="label-styles" for="phosphorous">Phosphorous (kg/ha):</label>
+              <input class="input-styles" type="number" id="phosphorous" name="P" required>
+              <br>
+              <label class="label-styles" for="potassium">Potassium (kg/ha):</label>
+              <input class="input-styles" type="number" id="potassium" name="K" required>
+              <br>
+              <label class="label-styles" for="ph">Soil pH:</label>
+              <input class="input-styles" type="number" id="ph" name="pH" required>
+              <br>
+              <label class="label-styles" for="rainfall">Rainfall (mm):</label>
+              <input class="input-styles" type="number" id="rainfall" name="rainfall" required>
+              <br>
+              <label class="label-styles" for="temperature">Temperature (°C):</label>
+              <input class="input-styles" type="number" id="temperature" name="temperature" required>
+              <br>
+              <label class="label-styles" for="humidity">Humidity (%):</label>
+              <input class="input-styles" type="number" id="humidity" name="humidity" required>
+              <br>
+              <button type="submit" class="submit-button">Get Crop Recommendations</button>
+          </form>
+      </div>
+  </div> 
+
+    
+    <!-- <div id="dataContainer">
+       Data will be displayed here 
+    </div> -->
+  </main>
+
+  <!-- <script>
+    document.getElementById('cropForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nitrogen = parseFloat(document.getElementById('nitrogen').value);
+      const potassium = parseFloat(document.getElementById('potassium').value);
+      const phosphorous = parseFloat(document.getElementById('phosphorous').value);
+      const temperature = parseFloat(document.getElementById('temperature').value);
+      const humidity = parseFloat(document.getElementById('humidity').value);
+      const pH = parseFloat(document.getElementById('pH').value);
+      const rainfall = parseFloat(document.getElementById('rainfall').value);
+
+      const data = {
+        nitrogen,
+        potassium,
+        phosphorous,
+        temperature,
+        humidity,
+        pH,
+        rainfall
+      };
+
+      const dataContainer = document.getElementById('dataContainer');
+      const dataElement = document.createElement('div');
+      dataElement.innerHTML = `<p><strong>Data submitted:</strong></p>
+        <p>Nitrogen Percentage: ${data.nitrogen}</p>
+        <p>Potassium Percentage: ${data.potassium}</p>
+        <p>Phosphorous Content: ${data.phosphorous}</p>
+        <p>Temperature: ${data.temperature}</p>
+        <p>Humidity: ${data.humidity}</p>
+        <p>pH: ${data.pH}</p>
+        <p>Rainfall: ${data.rainfall}</p>`;
+
+      dataContainer.appendChild(dataElement);
+    });
+  </script> -->
+</body>
+</html>

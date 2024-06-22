@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        body {
+            margin: 0px;
+        }
+
+        .rec-heading {
+        font-family: "Roboto";
+        font-weight: bold;
+        font-size: 28px;
+        color: white;
+        text-align: center;
+    }
+
+    .result-heading {
+        font-family: "Roboto";
+        font-weight: bold;
+        font-size: 32px;
+        color: white;
+        text-align: center;
+    }
+
+    .result-container {
+        background-image: url("https://www.day1tech.com/wp-content/uploads/2021/06/Image-Crop-Recommendation@1x-1.png");
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .crop-container {
+        border: solid 2px white;
+        background-color: transparent;
+        padding: 25px;
+        border-radius: 25px;
+        margin-top: 30px;
+    }
+
+    .crop-name {
+        font-family: "Roboto";
+        font-weight: bold;
+        font-size: 42px;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="result-container">
+        <h1 class="result-heading">Grow Smarter, Not Harder <br/> Let Nature and Technology Guide Your Crop Choices</h1>
+        <div class="crop-container">
+            <h1 class="rec-heading">Recommended Crops for You</h1>
+            <h1 id="recommended-crops" class="crop-name">{{prediction}}</h1>
+        </div>
+    </div>
+</body>
+</html>
